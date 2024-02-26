@@ -15,6 +15,10 @@ function createResponseData(message) {
     };
 }
 
+app.get('/', (req, res) => {
+    res.send(createResponseData("Welcome to the stopwatch server!"));
+});
+
 app.get('/start', (req, res) => {
     console.log(`Attempting to start: TimerID=${timerId}, isPaused=${isPaused}`);
     if (timerId === null && !isPaused) {
